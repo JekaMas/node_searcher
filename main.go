@@ -57,7 +57,7 @@ func Parse(ch <-chan string, wg *sync.WaitGroup) {
 		node := searcher.NodesMap[id]
 		searcher.NodesMapLock.RUnlock()
 
-		// eg. [eth/63 eth/62]
+		// e.g. [eth/63 eth/62]
 		capabilitiesStart := `<th scope="row" class="text-right">Capabilities</th><td>`
 		idxCapabilitiesStart := bytes.Index(res, []byte(capabilitiesStart)) + len(capabilitiesStart)
 		if idxCapabilitiesStart < 0 {
